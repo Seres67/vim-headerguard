@@ -30,7 +30,7 @@ function! s:Func(funcSuffix)
 endfunction
 
 function! s:HeaderguardName()
-    return toupper(expand('%:t:gs/[^0-9a-zA-Z_]/_/g'))
+    return toupper(fnamemodify(getcwd(), ':t') . '_' . expand('%:t:gs/[^0-9a-zA-Z_]/_/g'))
 endfunction
 
 function! s:HeaderguardLine1()
